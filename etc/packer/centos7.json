@@ -1,0 +1,37 @@
+{
+    "builders": [{
+        "type": "virtualbox-iso",
+        "guest_os_type": "RedHat_64",
+        "iso_url": "/Users/bleak/dev/isos/CentOS-7-x86_64-Everything-1511.iso",
+        "iso_checksum": "dba29c59117400b111633be2bf2aaf0e",
+        "iso_checksum_type": "md5",
+        "ssh_username": "vagrant",
+        "ssh_password": "vagrant",
+        "ssh_wait_timeout": "600s",
+        "vm_name": "IF2packercentos7",
+        "http_directory": "./",
+        "boot_wait": "10s",
+        "boot_command": [
+            "<esc><wait>",
+            "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks-centos.cfg",
+            "<enter><wait>"
+        ],
+        "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+        "vboxmanage": [
+            ["modifyvm", "{{.Name}}", "--memory", "2048"],
+            ["modifyvm", "{{.Name}}", "--usb", "on"],
+            ["modifyvm", "{{.Name}}", "--audio", "none"],
+            ["storagectl", "{{.Name}}", "--name", "SATA Controller", "--add", "sata"],
+            ["storagectl", "{{.Name}}", "--name", "SAS Controller", "--add", "sas"]
+        ]
+    }],
+    "provisioners": [{
+        "type": "shell",
+        "script": "base.sh"
+    }],
+    "post-processors": [{
+        "type": "vagrant",
+        "output": "/Users/bleak/dev/IF2/boxes/centos7_1.box",
+        "vagrantfile_template": "/Users/bleak/dev/IF2/Vagrantfile"
+    }]
+}

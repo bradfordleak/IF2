@@ -1,0 +1,72 @@
+{
+  "envname": "pist1",
+  "hosts": {
+    "auth1-1": {
+      "box": "centos72-base",
+      "ip_address2": 112,
+      "disksize": 0,
+      "memory": 512,
+      "ip_address1": 111,
+      "disks": 0
+    },
+    "stgmgt1-1": {
+      "box": "centos67-base",
+      "ip_address2": 194,
+      "disksize": 1024,
+      "memory": 512,
+      "ip_address1": 193,
+      "disks": 0
+    },
+    "stg1-1": {
+      "box": "centos72-base",
+      "ip_address2": 192,
+      "disksize": 1024,
+      "memory": 512,
+      "ip_address1": 191,
+      "disks": 5
+    },
+    "ctlr1-1": {
+      "box": "centos72-base",
+      "ip_address2": 44,
+      "disksize": 0,
+      "memory": 4096,
+      "ip_address1": 43,
+      "disks": 0
+    },
+    "inst1-1": {
+      "box": "centos72-base",
+      "ip_address2": 64,
+      "disksize": 0,
+      "memory": 512,
+      "ip_address1": 63,
+      "disks": 0
+    },
+    "ns1-1": {
+      "box": "centos72-base",
+      "ip_address2": 102,
+      "disksize": 0,
+      "memory": 512,
+      "ip_address1": 101,
+      "disks": 0
+    },
+    "app1-1": {
+      "box": "centos72-base",
+      "ip_address2": 54,
+      "disksize": 0,
+      "memory": 512,
+      "ip_address1": 53,
+      "disks": 0
+    },
+    "db1-1": {
+      "box": "oel67-base",
+      "ip_address2": 252,
+      "disksize": 0,
+      "memory": 512,
+      "ip_address1": 251,
+      "disks": 0
+    }
+  },
+  "site": "ltm",
+  "netsegment": "172.168.19",
+  "netname": "bleak.abcd.net"
+}
